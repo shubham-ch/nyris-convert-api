@@ -4,6 +4,41 @@ services:
 
   your_service:
     # Please add your service here and serve it on port 5000.
+
+    # # apiVersion: apps/v1
+    # kind: Deployment
+    # metadata:
+    #   name: convertapi
+    #   namespace: default
+    # spec:
+    #   replicas: 3
+    #   selector:
+    #     matchLabels:
+    #       app: convertapi
+    #   template:
+    #     metadata:
+    #       labels:
+    #         app: convertapi
+    #     spec:
+    #       containers:
+    #         - name: convertapi
+    #           image: shubhdoc1/convertapi:1.0.0
+    #           imagePullPolicy: Always
+
+    #   # apiVersion: v1
+    #   kind: Service
+    #   metadata:
+    #     name: convertapi
+    #     namespace: default
+    #   spec:
+    #     type: NodePort
+    #     selector:
+    #       name: convertapi
+    #     ports:
+    #       - port: 5000
+    #         targetPort: 5000
+    #         nodePort: 50001
+
     build:
       dockerfile: Dockerfile
       context: .
@@ -25,3 +60,4 @@ services:
     image: kennethreitz/httpbin
     ports:
       - "8000:80"
+

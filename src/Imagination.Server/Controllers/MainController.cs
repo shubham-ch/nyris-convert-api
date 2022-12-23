@@ -1,4 +1,10 @@
-﻿using Microsoft.AspNetCore.Http;
+﻿/*
+    This file contains the main core function of the api.
+
+*/
+
+
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using System.IO;
 using System.Collections.Generic;
@@ -10,13 +16,6 @@ namespace Imagination.Controllers
 
     public class Main : ControllerBase
     {
-        [HttpGet]
-
-        public IActionResult Get()
-        {
-            return Ok("hello world");
-        }
-
         [HttpPost]
         [Consumes("multipart/form-data")]
         public IActionResult Post(IList<IFormFile> image)
@@ -44,7 +43,6 @@ namespace Imagination.Controllers
                     return BadRequest();
                 }
             }
-            return Ok("Shubham is great!");
         }
     }
 }

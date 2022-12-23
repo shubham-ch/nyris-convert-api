@@ -7,7 +7,7 @@ namespace Imagination
 {
     internal static class Program
     {
-        internal static readonly ActivitySource Telemetry = new ("Server");
+        internal static readonly ActivitySource Telemetry = new("Server");
 
         private static void Main(string[] args)
         {
@@ -18,7 +18,5 @@ namespace Imagination
         private static IHostBuilder CreateHostBuilder(string[] args) =>
             Host.CreateDefaultBuilder(args)
                 .ConfigureWebHostDefaults(webBuilder => { webBuilder.UseStartup<Startup>(); });
-
-        //Imagination.UseStaticFiles();
     }
 }
